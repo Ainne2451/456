@@ -708,16 +708,13 @@ def sendButton3(event):  #按鈕樣版
             template=ButtonsTemplate(
                 thumbnail_image_url='https://evernote.com/blog/wp-content/uploads/2016/08/Facebook_LinkImage_1200x627-copy-1-300x300.png',  #顯示的圖片
                 title=' ',  #主標題
-                text='查詢特定人士：',  #副標題
+                text='重要資訊：',  #副標題
                 actions=[
                     MessageTemplateAction(  #顯示文字計息
-                        label='查詢董監事',
-                        text='https://reurl.cc/AqXVEe'
+                        label='最終受益人查詢',
+                        text='https://reurl.cc/lVAQl9'
                     ),
-                    MessageTemplateAction( 
-                        label='查詢公司',
-                        text='https://reurl.cc/AqXVEe'
-                    ),
+
                 ]
             )
         )
@@ -732,17 +729,13 @@ def sendButton(event):  #按鈕樣版
             template=ButtonsTemplate(
                 thumbnail_image_url='https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTAbBLFzkUIGJndS970UI6i0B2jfTDs6Uy1AtyVMtMDuHwPWlWV&usqp=CAU',  #顯示的圖片
                 title=' ',  #主標題
-                text='查詢特定人士：',  #副標題
+                text='重要資訊：',  #副標題
                 actions=[
                 URITemplateAction(
-                        label='查詢公司名',
-                        uri='https://reurl.cc/AqXVEe'
+                        label='最終受益人查詢',
+                        uri='https://reurl.cc/lVAQl9'
                     ),
-                URITemplateAction(
-                        label='查詢董監事',
-                        uri='https://reurl.cc/AqXVEe'
 
-                    ),
                 ]
             )
         )
