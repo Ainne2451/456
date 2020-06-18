@@ -779,7 +779,7 @@ def sendButtonb(event):  #按鈕樣版
 
   
 def sendCarousel(event):  #轉盤樣板
-    try:
+ try:
         message = TemplateSendMessage(
             alt_text='其他',
             template=CarouselTemplate(
@@ -790,8 +790,8 @@ def sendCarousel(event):  #轉盤樣板
                         text='其他資訊',
                         actions=[
                             URITemplateAction(
-                                label='洗錢防制之最終受益人查詢',
-                                uri='https://reurl.cc/AqXVEe'
+                                label='洗錢型態例子',
+                                uri='https://www.mjib.gov.tw/EditPage?PageID=564dcbaf-1d4e-45a9-bf1e-a26ea488bd76'
                             ),
                             MessageTemplateAction(
                                 label='國際防制洗錢標準',
@@ -812,5 +812,3 @@ def sendCarousel(event):  #轉盤樣板
         line_bot_api.reply_message(event.reply_token,message)
     except:
         line_bot_api.reply_message(event.reply_token,TextSendMessage(text='發生錯誤！'))
-
-
