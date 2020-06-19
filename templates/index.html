@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>最終受益人資料查詢</title>
+	<style>
+	input[type=text], select {
+	  width: 100%;
+	  padding: 15px 100px;
+	  margin: 20px 0;
+	  display: inline-block;
+	  border: 2px solid #ccc;
+	  border-radius: 5px;
+	  box-sizing: border-box;
+	}
+
+	input[type=submit] {
+	  width: 100%;
+	  background-color: #178bfd;
+	  color: white;
+	  padding: 15px 22px;
+	  margin: 10px 0;
+	  border: none;
+	  border-radius: 5px;
+	  cursor: pointer;
+	  font-family:DFKai-sb; /*標楷體*/
+	  font-size: 25px; //字型大小
+	}
+
+	input[type=submit]:hover {
+	  background-color: #6495ED;
+	}
+
+	div {
+	  border-radius: 5px;
+	  background-color: #f2f2f2;
+	  padding: 20px;
+	  font-family:Times New Roman; /*Times New Roman*/
+	  font-size: 20px;
+	}
+	</style>
+
+</head>
+<body style="background-color:#0b3156">
+               
+<form action="" method="POST">{% csrf_token %}
+
+<!--CSS動畫-->
+  <marquee behavior="scroll" width="100%"><font face="微軟正黑體" size=6px color="#81bba5"><b>銘傳大學 金融科技工作坊</b></font></marquee><br><br><br>
+  
+<table  style="position:absolute;top:70px;left:500px;font-family:標楷體; font-size:20px;color: white;" >
+	<th>最終受益人資料查詢</th>
+	<tr>
+	<td></td>
+	</tr>
+	
+        <tr>
+		<td>統編(必填,例：16750507)</td>
+		</tr>
+		<tr>
+		<td><input type="text" name="cComid"></td>
+         </tr>
+		 
+         <tr>
+		<td>職務</td><br>
+		</tr>
+	<tr>
+		<td><select name="cPosition">
+		 <option value="">全部</option>
+		 <option value="董事">董事</option>
+		 <option value="董事長">董事長</option>
+		 <option value="監察人">監察人</option>
+		 <option value="副董事長">副董事長</option>
+		 <option value="獨立董事">獨立董事</option>
+		</select></td><br>
+	
+		<!-- <td><input type="text" name="cPosition"></td><br> -->
+         </tr>
+		 
+		 
+         <tr>
+		<td>持股數或投資金額(例：7,000)</td><br>
+		</tr>
+		<tr>
+		<td><input type="text" name="cSharemoney" value="0"></td><br>
+         </tr>
+		 			
+         <tr>
+			<td><input type="submit" value="查 詢"></td><br>
+		</tr>
+</table>				
+	
+</form>
+			
+				
+
+
+<table border="1" style="position:absolute;top:590px;left:460px;font-family:標楷體; font-size:20px;color: white;">
+        <th>統編</th>
+	<th>職務</th>
+	<th>持股數或投資金額</th>
+
+			
+	    {% for n in select_all %} 
+	<tr>
+		<td>{{n.cComid}}  </td>
+		<td>{{n.cPosition}}  </td>
+		<td>{{n.cSharemoney}}  </td>
+    </tr>
+	
+ {% endfor %} 
+
+
+</table>
+
+
+</body>
+</html>
