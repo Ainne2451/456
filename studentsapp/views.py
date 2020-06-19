@@ -83,7 +83,7 @@ def index2(request):
 def index(request):
                 now=datetime.now()
                 username="daphne lo" 
-                return render(request,"hotel_form.html",locals())	
+                return render(request,"index.html",locals())	
 	
 def listone(request): 
 	try: 
